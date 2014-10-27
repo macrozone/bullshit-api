@@ -3,11 +3,13 @@ jsdom = require 'jsdom'
 
 express = require 'express'
 app = express()
-number = 1
+
 
 
 app.get '/', (req, res) ->
-	getBullshit 1, (errors, result) ->
+	number =  req.query?.number || 1
+
+	getBullshit number, (errors, result) ->
 
 		unless errors?
 			res.status(200).send result
@@ -21,6 +23,9 @@ getBullshit = (number, done) ->
 		
 		unless errors?
 			$ = jquery window
-			done null, $("li").slice(0,number).text()
+			
+			result = ($(line).text() for line in $("li").slice(0,number)).join "\n\n"
+			
+			done null, result
 		else 
 			done errors, null
