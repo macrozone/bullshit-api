@@ -1,0 +1,24 @@
+{
+  "name": "bullshit-api",
+  "version": "0.0.1",
+  "description": "parsers http://cbsg.sourceforge.net/cgi-bin/live",
+  "main": "app.js",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "jsdom": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macrozone/bullshit-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macrozone/bullshit-api/issues"
+  },
+  "homepage": "https://github.com/macrozone/bullshit-api"
+}
