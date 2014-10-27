@@ -1,20 +1,19 @@
 jquery = require 'jquery'
 jsdom = require 'jsdom'
 
-http = require 'http'
-
+express = require 'express'
+app = express()
 number = 1
 
 
-http.createServer (req, res) ->
+app.get '/', (req, res) ->
 	getBullshit 1, (errors, result) ->
 
 		unless errors?
-			res.writeHead 200, 'Content-Type': 'text/plain'
-			res.end result
+			res.status(200).send result
 		else
-			res.writeHead 500
-.listen process.env.PORT || 3000
+			res.status(500).send "error"
+app.listen process.env.PORT || 3000
 
 getBullshit = (number, done) ->
 

@@ -4,6 +4,7 @@
   "description": "parsers http://cbsg.sourceforge.net/cgi-bin/live",
   "main": "app.js",
   "dependencies": {
+    "express": "^4.10.0",
     "jquery": "^2.1.1",
     "jsdom": "^1.0.3"
   },
