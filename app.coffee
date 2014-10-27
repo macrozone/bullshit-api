@@ -8,9 +8,7 @@ app = express()
 
 app.get '/', (req, res) ->
 	number =  req.query?.number || 1
-
 	getBullshit number, (errors, result) ->
-
 		unless errors?
 			res.status(200).send result
 		else
